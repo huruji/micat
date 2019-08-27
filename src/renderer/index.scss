@@ -1,0 +1,31 @@
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #fafafa transparent;
+    left: 50%;
+    transform: translate(-50%, 3px);
+    z-index: 2;
+    top: -10px;
+}
+
+.arrow.border {
+    border-color: transparent transparent #c8c8c8 transparent;
+    z-index: -1;
+    margin-top: -1px;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    top: 10px;
+}
+
+.app-container {
+}

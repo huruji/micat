@@ -2,8 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConfig = require('./webpack.base.config');
+
+const isWallPaper = require.resolve('wallpaper')
 
 module.exports = merge.smart(baseConfig, {
     target: 'electron-main',
@@ -39,6 +42,12 @@ module.exports = merge.smart(baseConfig, {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-        })
+        }),
+        // isWallPaper && new CopyPlugin([
+        //     {
+        //         from: path.resolve(isWallPaper, '../source'),
+        //         to: './'
+        //     }
+        // ])
     ]
 });

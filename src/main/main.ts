@@ -1,6 +1,11 @@
-import { app } from 'electron';
+import { app, ipcMain } from 'electron';
 import { menubar } from 'menubar';
 import * as path from 'path';
+import { IPC_CHANNel } from '../common/constants';
+import * as download from 'download';
+import * as os from 'os';
+import * as wallpaper from 'wallpaper';
+import * as imageType from 'image-type';
 
 const isDev = app.isPackaged;
 
@@ -24,7 +29,8 @@ const mb = menubar({
             webSecurity: false
         },
         width: 280,
-        height: 600
+        height: 600,
+        resizable: false
     }
 });
 
@@ -34,6 +40,22 @@ mb.app.on('ready', async () => {
         const unhandled = require('electron-unhandled');
         unhandled();
     }
+
+    ipcMain.on(IPC_CHANNel.SET_WALLPAPER_START, async (e: any, img: string) => {
+        const home = os.homedir();
+        const arr = img.split('/');
+        const filename = arr[arr.length - 1];
+        const micatPath = path.resolve(home, 'Documents/micat');
+        const buffer = await download(img, micatPath, {
+            filename
+        });
+        // const type = imageType(buffer)
+        const dist = path.resolve(micatPath, filename);
+        // console.log(type)
+        console.log(filename);
+        console.log(dist);
+        wallpaper.set(dist);
+    });
 });
 
 mb.on('after-create-window', () => {

@@ -5,8 +5,38 @@
 .image-item-container {
     margin: 0;
     padding: 0;
+    position: relative;
     img {
         font-size: 0;
         display: block;
+    }
+    .hover-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background: rgba(0,0,0,.8);
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        span {
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            border-radius: 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            user-select: none;
+            cursor: pointer;
+        }
     }
 }

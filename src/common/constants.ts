@@ -1,0 +1,3 @@
+export enum IPC_CHANNel {
+    SET_WALLPAPER_START = 'SET_WALLPAPER_START'
+}

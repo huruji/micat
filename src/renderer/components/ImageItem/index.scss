@@ -1,0 +1,12 @@
+.image-item {
+    width: 100%;
+    height: auto;
+}
+.image-item-container {
+    margin: 0;
+    padding: 0;
+    img {
+        font-size: 0;
+        display: block;
+    }
+}

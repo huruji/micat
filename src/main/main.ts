@@ -19,10 +19,13 @@ const mb = menubar({
     index: 'http://localhost:2003',
     browserWindow: {
         transparent: true,
-        alwaysOnTop: true
-    },
-    width: 300,
-    height: 500
+        alwaysOnTop: true,
+        webPreferences: {
+            webSecurity: false
+        },
+        width: 280,
+        height: 600
+    }
 });
 
 mb.app.on('ready', async () => {
@@ -34,8 +37,5 @@ mb.app.on('ready', async () => {
 });
 
 mb.on('after-create-window', () => {
-    // if(isDev)  {
-    console.log('asfsaf');
     mb.window!.webContents.openDevTools();
-    // }
 });

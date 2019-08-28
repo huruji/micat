@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './index.scss';
+import ImageList from './containers/ImageList';
 
 const App = () => (
     <div className="app-container">
         <div className="arrow" />
         <div className="arrow border" />
-        <div style={{ height: '200px', background: '#fff' }} />
+        <ImageList />
     </div>
 );
 

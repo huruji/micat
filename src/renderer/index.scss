@@ -1,5 +1,5 @@
 .arrow {
-    position: absolute;
+    position: fixed;
     width: 0;
     height: 0;
     border-style: solid;
@@ -8,13 +8,18 @@
     left: 50%;
     transform: translate(-50%, 3px);
     z-index: 2;
-    top: -10px;
+    top: 0px;
 }
 
 .arrow.border {
     border-color: transparent transparent #c8c8c8 transparent;
     z-index: -1;
     margin-top: -1px;
+}
+.app-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 body {

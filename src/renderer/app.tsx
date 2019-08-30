@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 
 import Index from './Index';
-import store from './store';
+import { useListIdContext } from './store';
 import '@primer/css';
 
 // Create main element
@@ -16,9 +15,9 @@ document.body.appendChild(mainElement);
 const render = (Component: () => JSX.Element) => {
     ReactDOM.render(
         <AppContainer>
-            <Provider store={store}>
+            <useListIdContext.Provider>
                 <Component />
-            </Provider>
+            </useListIdContext.Provider>
         </AppContainer>,
         mainElement
     );

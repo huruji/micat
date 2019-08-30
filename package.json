@@ -8,7 +8,7 @@
     "build-renderer": "cross-env NODE_ENV=production webpack --config webpack.renderer.prod.config.js",
     "build": "npm run build-main && npm run build-renderer",
     "start-renderer-dev": "webpack-dev-server --config webpack.renderer.dev.config.js",
-    "start-main-dev": "webpack --config webpack.main.config.js && sudo electron ./dist/main.js",
+    "start-main-dev": "webpack --config webpack.main.config.js && electron ./dist/main.js",
     "start-dev": "cross-env START_HOT=1 npm run start-renderer-dev",
     "prestart": "npm run build",
     "start": "electron .",
@@ -53,10 +53,10 @@
     }
   },
   "build": {
-    "productName": "ProductName",
-    "appId": "org.your.productname",
+    "productName": "micat",
+    "appId": "org.huruji.micat",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "micat"
     },
     "directories": {
       "output": "release"
@@ -65,13 +65,7 @@
       "dist/",
       "node_modules/",
       "package.json"
-    ],
-    "linux": {
-      "target": "deb"
-    },
-    "win": {
-      "target": "nsis"
-    }
+    ]
   },
   "repository": {
     "type": "git",
@@ -138,7 +132,11 @@
   },
   "dependencies": {
     "@primer/css": "^12.6.1",
+    "@types/classnames": "^2.2.9",
     "@types/download": "^6.2.4",
+    "classname": "0.0.0",
+    "classnames": "^2.2.6",
+    "constate": "^1.2.0",
     "download": "^7.1.0",
     "electron-unhandled": "^3.0.0",
     "fs-extra": "^8.1.0",

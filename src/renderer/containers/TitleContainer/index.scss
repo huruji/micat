@@ -1,0 +1,25 @@
+.title-contaienr {
+    background: #091823;
+    padding: 50px 15px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    .title-item {
+        position: relative;
+        cursor: pointer;
+        color: #948f8f;
+        user-select: none;
+        &.active {
+            color: #dad7d7;
+            &::after {
+                content: '';
+                height: 2px;
+                width: 15px;
+                background: #dad7d7;
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

@@ -5,7 +5,6 @@ import { IPC_CHANNel } from '../common/constants';
 import * as download from 'download';
 import * as os from 'os';
 import * as wallpaper from 'wallpaper';
-import * as imageType from 'image-type';
 
 const isDev = app.isPackaged;
 
@@ -26,7 +25,8 @@ const mb = menubar({
         transparent: true,
         alwaysOnTop: true,
         webPreferences: {
-            webSecurity: false
+            webSecurity: false,
+            nodeIntegration: true
         },
         width: 280,
         height: 600,

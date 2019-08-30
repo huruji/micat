@@ -118,3 +118,5 @@ typings/
 .vscode
 
 dist
+
+release

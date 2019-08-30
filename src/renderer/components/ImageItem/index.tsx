@@ -15,6 +15,7 @@ const ImageItem: React.SFC<IProps> = ({ src }) => {
             onMouseOver={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
+            <img src={src} style={{ height: 'auto', width: '100%' }} />
             {hover && (
                 <div className="hover-modal">
                     <span onClick={() => startSetWallpaper(src)}>设为壁纸</span>

@@ -120,3 +120,7 @@ typings/
 dist
 
 release
+
+micat-darwin-x64
+
+logo/

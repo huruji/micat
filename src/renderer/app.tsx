@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import Index from './Index';
-import { useListIdContext } from './store';
+import useAppStore from './store';
 import '@primer/css';
 
 // Create main element
@@ -15,9 +15,9 @@ document.body.appendChild(mainElement);
 const render = (Component: () => JSX.Element) => {
     ReactDOM.render(
         <AppContainer>
-            <useListIdContext.Provider>
+            <useAppStore.Provider>
                 <Component />
-            </useListIdContext.Provider>
+            </useAppStore.Provider>
         </AppContainer>,
         mainElement
     );

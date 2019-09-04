@@ -52,12 +52,11 @@ mb.app.on('ready', async () => {
         const buffer = await download(img, micatPath, {
             filename
         });
-        // const type = imageType(buffer)
         const dist = path.resolve(micatPath, filename);
-        // console.log(type)
-        console.log(filename);
-        console.log(dist);
-        wallpaper.set(dist);
+
+        await wallpaper.set(dist);
+
+        mb.window!.webContents.send(IPC_CHANNel.SET_WALLPAPER_END);
     });
 
     const { tray } = mb;

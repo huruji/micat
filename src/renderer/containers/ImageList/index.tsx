@@ -4,14 +4,16 @@ import handleTuchongImage from '../../utils/handle-tuchong-image';
 import handle360Image from '../../utils/handle-360-image';
 import ImageItem from '../../components/ImageItem';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
-import { useListIdContext } from '../../store';
+import useAppStore from '../../store';
+import { ipcRenderer } from 'electron';
+import { IPC_CHANNel } from '../../../common/constants';
 
 import './index.scss';
 
 const { useState, useEffect } = React;
 
-export default () => {
-    const { listId } = useListIdContext();
+export default (): React.ReactElement => {
+    const { listId, currentWallpaper, setCurrentWallpaper } = useAppStore();
 
     const [images, setImages] = useState<string[]>([]);
 
@@ -30,11 +32,20 @@ export default () => {
         setImages([...imgs]);
     }
 
+    useEffect(() => {
+        ipcRenderer.on(IPC_CHANNel.SET_WALLPAPER_END, () => {
+            setCurrentWallpaper({
+                ...currentWallpaper,
+                ...{ isSetting: false }
+            });
+        });
+    }, []);
+
     const containerRef = useBottomScrollListener<HTMLDivElement>(init);
     return (
         <div className="image-list-container" ref={containerRef}>
             {images.map((image, i) => (
-                <ImageItem src={image} key={i} />
+                <ImageItem src={image} key={i} index={i} />
             ))}
         </div>
     );

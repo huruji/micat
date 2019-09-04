@@ -4,4 +4,7 @@
     height: 530px;
     width: 100%;
     background: #091823;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useListIdContext } from '../../store';
+import useAppStore from '../../store';
 import classnames from 'classnames';
 import './index.scss';
 
@@ -32,7 +32,7 @@ const titleList: ITitle[] = [
 ];
 
 const Title: React.SFC = () => {
-    const { listId, setListId } = useListIdContext();
+    const { listId, setListId } = useAppStore();
 
     return (
         <div className="title-contaienr">

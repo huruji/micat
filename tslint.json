@@ -7,6 +7,7 @@
   ],
   "jsRules": {},
   "rules": {
+      "import-name": [0],
       "jsx-alignment": [0],
       "jsx-no-lambda": [0],
       "max-line-length": [true, 120],
@@ -19,7 +20,6 @@
           }
       ],
       "variable-name": false,
-      "jsx-alignment": true,
       "jsx-equals-spacing": [true, "never"],
       "jsx-no-string-ref": true,
       "jsx-self-close": true

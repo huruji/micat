@@ -38,5 +38,16 @@
             user-select: none;
             cursor: pointer;
         }
+        div {
+            height: 40px;
+            line-height: 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        &.bg {
+            background: rgba(255, 255, 255, 0.3);
+        }
     }
 }

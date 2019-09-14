@@ -4,6 +4,7 @@
   "description": "米咔壁纸 —— mac 平台的壁纸应用",
   "main": "./dist/main.js",
   "scripts": {
+    "dev": "npm run start-renderer-dev & npm run start-main-dev",
     "build-main": "cross-env NODE_ENV=production webpack --config webpack.main.prod.config.js",
     "build-renderer": "cross-env NODE_ENV=production webpack --config webpack.renderer.prod.config.js",
     "build": "cross-env NODE_ENV=production npm run build-main && npm run build-renderer",

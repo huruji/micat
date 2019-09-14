@@ -13,11 +13,15 @@ function useAppStore() {
         src: ''
     });
 
+    const [autoChange, setAutoChange] = useState<Boolean>(false);
+
     return {
         listId,
         setListId,
         currentWallpaper,
-        setCurrentWallpaper
+        setCurrentWallpaper,
+        autoChange,
+        setAutoChange
     };
 }
 

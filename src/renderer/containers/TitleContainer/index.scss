@@ -1,49 +1,11 @@
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
 .title-contaienr {
     background: #091823;
     padding: 50px 15px 10px 15px;
     display: flex;
     justify-content: space-between;
     position: relative;
-    .setting {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        &-modal {
-            position: absolute;
-            top: 30px;
-            right: -8px;
-            width: 0px;
-            padding: 10px;
-            height: 0px;
-            opacity: 0;
-            border-radius: 8px;
-            background: #dad7d7;
-            z-index: 999;
-            transition: all 0.5s;
-            transition-timing-function: cubic-bezier(0.79, -0.01, 0.69, 2);
-            &-arrow {
-                position: absolute;
-                height: 0;
-                width: 0;
-                border: 8px solid transparent;
-                border-bottom-color: #dad7d7;
-                top: -15px;
-                right: 8px;
-            }
-            &.visible {
-                height: 100px;
-                width: 200px;
-                opacity: 1;
-            }
-            &-content-item {
-                margin-bottom: 10px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 14px;
-            }
-        }
-    }
+
     .title-item {
         position: relative;
         cursor: pointer;
